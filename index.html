@@ -11,15 +11,20 @@
 <body>
     <div id="app">
         <button @click="generateMails"> Genera Mail</button>
-        <ol>
+        <div v-if="emailsGeneratorAll === false">
+            Stiamo elaborando la sua richiesta...
+        </div>
+        <ol v-else>
             <li v-for="curMail in email">{{ curMail }}</li>
         </ol>
+       
     </div>
+    
 
     <!-- AXIOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js" integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- script js -->
-    <script src="/js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
